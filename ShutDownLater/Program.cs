@@ -1,12 +1,12 @@
 ﻿//ShutDownLater
-//Version: 0.2
+//Version: 0.3
 //Author: Markaelie
 //Created: April 21, 2015
-//Updated: February 17, 2022
+//Updated: August 21, 2022
 
 using System.Diagnostics;
 
-Console.WriteLine("╔╔══════════════════════╗╗ ShutDownLater v0.2");
+Console.WriteLine("╔╔══════════════════════╗╗ ShutDownLater v0.3");
 Thread.Sleep(10);
 Console.WriteLine("║║▐█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▌║║    by Markaelie");
 Thread.Sleep(10);
@@ -36,10 +36,9 @@ Console.WriteLine("██▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀�
 Thread.Sleep(10);
 Console.WriteLine("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
 
-Console.WriteLine("");
 Console.Write(" Write shut down time in minutes: ");
 
-int minutes = Convert.ToInt32(Console.ReadLine());
+short minutes = Convert.ToInt16(Console.ReadLine());
 DateTime shutDownTime = DateTime.Now.AddMinutes(minutes);
 TimeSpan ts = shutDownTime - DateTime.Now;
 
@@ -61,5 +60,3 @@ static void ClearCurrentConsoleLine()
     for (int i = 0; i < Console.WindowWidth; i++) Console.Write(" ");
     Console.SetCursorPosition(0, currentLineCursor);
 }
-
-Console.ReadLine();
