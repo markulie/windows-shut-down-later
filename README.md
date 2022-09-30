@@ -1,4 +1,4 @@
-# ShutDownLater
+# Shut Down Later
 
 Terminal Turn off timer based on .NET 6 & C#
 
