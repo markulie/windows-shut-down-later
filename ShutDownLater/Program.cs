@@ -1,6 +1,6 @@
 ﻿//ShutDownLater
 //Version: 0.3
-//Author: Markaelie
+//Author: Markulie
 //Created: April 21, 2015
 //Updated: August 21, 2022
 
@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 Console.WriteLine("╔╔══════════════════════╗╗ ShutDownLater v0.3");
 Thread.Sleep(10);
-Console.WriteLine("║║▐█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▌║║    by Markaelie");
+Console.WriteLine("║║▐█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▌║║    by Markulie");
 Thread.Sleep(10);
 Console.WriteLine("║║▐▌░░▒▒░░▒▒░░▒▒░░▒▒░░▐▌║║");
 Thread.Sleep(10);
@@ -40,15 +40,15 @@ Console.Write(" Write shut down time in minutes: ");
 
 short minutes = Convert.ToInt16(Console.ReadLine());
 DateTime shutDownTime = DateTime.Now.AddMinutes(minutes);
-TimeSpan ts = shutDownTime - DateTime.Now;
+TimeSpan timeSpan = shutDownTime - DateTime.Now;
 
 Console.WriteLine("");
 
-while (ts > TimeSpan.Zero)
+while (timeSpan > TimeSpan.Zero)
 {
     ClearCurrentConsoleLine();
-    ts = shutDownTime - DateTime.Now;
-    Console.Write(" " + ts.Hours + " hours " + ts.Minutes + " minutes " + ts.Seconds + " seconds ");
+    timeSpan = shutDownTime - DateTime.Now;
+    Console.Write(" " + timeSpan.Hours + " hours " + timeSpan.Minutes + " minutes " + timeSpan.Seconds + " seconds ");
     Thread.Sleep(500);
     if (shutDownTime < DateTime.Now) Process.Start("shutdown.exe", "-h");
 }
